@@ -1,0 +1,153 @@
+:root {
+  --color-cyan: #0aa;
+  --color-magenta: #a0a;
+  --color-yellow: #aa0;
+  --color-key: #000;
+  --color-cyan-light: #5ff;
+  --color-magenta-light: #f5f;
+  --color-yellow-light: #ff5;
+  --color-key-light: #aaa;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+html {
+  font-size: 16px;
+}
+body {
+  font-family: "Space Mono", monospace;
+  opacity: 0;
+  background-color: transparent;
+  transition: opacity 1s ease, background-color 1s ease;
+}
+body.show {
+  opacity: 1;
+}
+canvas {
+  display: block;
+}
+#app {
+  position: relative;
+  display: inline-block;
+}
+#app .text-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+.letter {
+  font-size: 16rem;
+  font-weight: 400;
+  line-height: 1;
+}
+.letter--1 {
+  color: var(--color-cyan-light);
+  text-shadow: -16px -16px var(--color-cyan), -15px -15px var(--color-cyan),
+    -14px -14px var(--color-cyan), -13px -13px var(--color-cyan),
+    -12px -12px var(--color-cyan), -11px -11px var(--color-cyan),
+    -10px -10px var(--color-cyan), -9px -9px var(--color-cyan),
+    -8px -8px var(--color-cyan), -7px -7px var(--color-cyan),
+    -6px -6px var(--color-cyan), -5px -5px var(--color-cyan),
+    -4px -4px var(--color-cyan), -3px -3px var(--color-cyan),
+    -2px -2px var(--color-cyan), -1px -1px var(--color-cyan);
+}
+.letter--2 {
+  color: var(--color-magenta-light);
+  text-shadow: -16px 16px var(--color-magenta), -15px 15px var(--color-magenta),
+    -14px 14px var(--color-magenta), -13px 13px var(--color-magenta),
+    -12px 12px var(--color-magenta), -11px 11px var(--color-magenta),
+    -10px 10px var(--color-magenta), -9px 9px var(--color-magenta),
+    -8px 8px var(--color-magenta), -7px 7px var(--color-magenta),
+    -6px 6px var(--color-magenta), -5px 5px var(--color-magenta),
+    -4px 4px var(--color-magenta), -3px 3px var(--color-magenta),
+    -2px 2px var(--color-magenta), -1px 1px var(--color-magenta);
+}
+.letter--3 {
+  color: var(--color-yellow-light);
+  text-shadow: 16px 16px var(--color-yellow), 15px 15px var(--color-yellow),
+    14px 14px var(--color-yellow), 13px 13px var(--color-yellow),
+    12px 12px var(--color-yellow), 11px 11px var(--color-yellow),
+    10px 10px var(--color-yellow), 9px 9px var(--color-yellow),
+    8px 8px var(--color-yellow), 7px 7px var(--color-yellow),
+    6px 6px var(--color-yellow), 5px 5px var(--color-yellow),
+    4px 4px var(--color-yellow), 3px 3px var(--color-yellow),
+    2px 2px var(--color-yellow), 1px 1px var(--color-yellow);
+}
+.letter--4 {
+  color: var(--color-key-light);
+  text-shadow: 16px -16px var(--color-key), 15px -15px var(--color-key),
+    14px -14px var(--color-key), 13px -13px var(--color-key),
+    12px -12px var(--color-key), 11px -11px var(--color-key),
+    10px -10px var(--color-key), 9px -9px var(--color-key),
+    8px -8px var(--color-key), 7px -7px var(--color-key),
+    6px -6px var(--color-key), 5px -5px var(--color-key),
+    4px -4px var(--color-key), 3px -3px var(--color-key),
+    2px -2px var(--color-key), 1px -1px var(--color-key);
+}
+
+@media screen and (orientation: portrait) {
+  .text-container {
+    flex-flow: column;
+  }
+  .letter {
+    font-size: 8rem;
+  }
+  .letter--1 {
+    color: var(--color-cyan-light);
+    text-shadow: -16px 0px var(--color-cyan), -15px 0px var(--color-cyan),
+      -14px 0px var(--color-cyan), -13px 0px var(--color-cyan),
+      -12px 0px var(--color-cyan), -11px 0px var(--color-cyan),
+      -10px 0px var(--color-cyan), -9px 0px var(--color-cyan),
+      -8px 0px var(--color-cyan), -7px 0px var(--color-cyan),
+      -6px 0px var(--color-cyan), -5px 0px var(--color-cyan),
+      -4px 0px var(--color-cyan), -3px 0px var(--color-cyan),
+      -2px 0px var(--color-cyan), -1px 0px var(--color-cyan);
+  }
+  .letter--2 {
+    color: var(--color-magenta-light);
+    text-shadow: 16px 0px var(--color-magenta), 15px 0px var(--color-magenta),
+      14px 0px var(--color-magenta), 13px 0px var(--color-magenta),
+      12px 0px var(--color-magenta), 11px 0px var(--color-magenta),
+      10px 0px var(--color-magenta), 9px 0px var(--color-magenta),
+      8px 0px var(--color-magenta), 7px 0px var(--color-magenta),
+      6px 0px var(--color-magenta), 5px 0px var(--color-magenta),
+      4px 0px var(--color-magenta), 3px 0px var(--color-magenta),
+      2px 0px var(--color-magenta), 1px 0px var(--color-magenta);
+  }
+  .letter--3 {
+    color: var(--color-yellow-light);
+    text-shadow: -16px 0px var(--color-yellow), -15px 0px var(--color-yellow),
+      -14px 0px var(--color-yellow), -13px 0px var(--color-yellow),
+      -12px 0px var(--color-yellow), -11px 0px var(--color-yellow),
+      -10px 0px var(--color-yellow), -9px 0px var(--color-yellow),
+      -8px 0px var(--color-yellow), -7px 0px var(--color-yellow),
+      -6px 0px var(--color-yellow), -5px 0px var(--color-yellow),
+      -4px 0px var(--color-yellow), -3px 0px var(--color-yellow),
+      -2px 0px var(--color-yellow), -1px 0px var(--color-yellow);
+  }
+  .letter--4 {
+    color: var(--color-key-light);
+    text-shadow: 16px 0px var(--color-key), 15px 0px var(--color-key),
+      14px 0px var(--color-key), 13px 0px var(--color-key),
+      12px 0px var(--color-key), 11px 0px var(--color-key),
+      10px 0px var(--color-key), 9px 0px var(--color-key),
+      8px 0px var(--color-key), 7px 0px var(--color-key),
+      6px 0px var(--color-key), 5px 0px var(--color-key),
+      4px 0px var(--color-key), 3px 0px var(--color-key),
+      2px 0px var(--color-key), 1px 0px var(--color-key);
+  }
+}
