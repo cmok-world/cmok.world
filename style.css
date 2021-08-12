@@ -47,7 +47,6 @@ canvas {
   display: flex;
   justify-content: center;
   align-items: center;
-  pointer-events: none;
 }
 .letter {
   font-size: 16rem;

@@ -12,8 +12,8 @@ const float cTimeScaleY = 1.0 / 2.5;
 const float cContrast = 0.6;
 const float cSpread = 0.5;
 
-const vec3 cColorA = vec3(0.666, 0.0, 0.0);
-const vec3 cColorB = vec3(1.0, 0.333, 1.0);
+uniform vec3 cColorA;
+uniform vec3 cColorB;
 
 // Gradient Noise by Inigo Quilez - iq/2013
 // https://www.shadertoy.com/view/XdXGW8
